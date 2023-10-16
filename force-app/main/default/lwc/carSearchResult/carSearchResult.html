@@ -1,0 +1,18 @@
+<template>
+    <lightning-layout multiple-rows horizontal-align="center">
+        <template if:true={isCarDetailAvailable}>
+            <template iterator:car={matchedCarsArray}>
+                <lightning-layout-item key={car.value.Id} padding="around-small" size="6">
+                    <c-car-tile car={car.value}></c-car-tile>
+                </lightning-layout-item>
+            </template>
+        </template>
+
+        <template if:false={isCarDetailAvailable}>
+            <div class="slds-align_absolute-center">
+                No Cars Found According To The Given requirements
+            </div>
+        </template>
+    </lightning-layout>
+
+</template>
